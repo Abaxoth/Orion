@@ -1,0 +1,31 @@
+﻿<Application x:Class="Orion.Client.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views/MainView.xaml">
+
+    <Application.Resources>
+
+        <SolidColorBrush x:Key="AppSwitchBackBrush" Color="#3943B7" />
+        <SolidColorBrush x:Key="AppButtonBackBrush" Color="#00BFB2" />
+        <SolidColorBrush x:Key="AppTabItemForeBrush" Color="#064789" />
+        
+
+        <Style x:Key="AppButton" TargetType="{x:Type Button}">
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Background" Value="{StaticResource AppButtonBackBrush}"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style x:Key="AppTabItem" TargetType="{x:Type TabItem}">
+            <Setter Property="Height" Value="30"/>
+            <!--<Setter Property="Cursor" Value="Hand"/>-->
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Foreground" Value="{StaticResource AppTabItemForeBrush}"></Setter>
+        </Style>
+
+
+    </Application.Resources>
+</Application>

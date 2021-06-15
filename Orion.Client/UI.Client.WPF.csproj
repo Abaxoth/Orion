@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CDE623C-DDCB-4426-BE12-B95F4C726BB5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Orion.Client</RootNamespace>
+    <AssemblyName>Orion.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Mvvm, Version=20.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.20.2.3\lib\net452\DevExpress.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.UI, Version=20.2.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.20.2.3\lib\net452\DevExpress.Mvvm.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Melnik.Common">
+      <HintPath>..\..\..\..\Users\Supra\.nuget\packages\melnik.common\1.0.1\lib\netstandard2.0\Melnik.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ComponentControl.xaml.cs">
+      <DependentUpon>ComponentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SwitchButtonControl.xaml.cs">
+      <DependentUpon>SwitchButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ViewModels\ComponentControlViewModel.cs" />
+    <Compile Include="Controls\ViewModels\SwitchButtonControlViewModel.cs" />
+    <Compile Include="Exceptions\WarningException.cs" />
+    <Compile Include="Helpers\AppHelper.cs" />
+    <Compile Include="Helpers\ComponentHelper.cs" />
+    <Compile Include="Helpers\ViewEvents.cs" />
+    <Compile Include="Helpers\ViewHelper.cs" />
+    <Compile Include="Models\ComponentMenuItem.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\AppConfig.cs" />
+    <Compile Include="Settings\AppSettings.cs" />
+    <Compile Include="ViewModels\Common\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ComponentDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Events\ICloseView.cs" />
+    <Compile Include="ViewModels\Events\ILoadView.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\ComponentDetailsView.xaml.cs">
+      <DependentUpon>ComponentDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ComponentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SwitchButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComponentDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Benchmark.Abstractions\Benchmark.Abstractions.csproj">
+      <Project>{63D3DF70-F726-42B2-A966-708A0A802352}</Project>
+      <Name>Benchmark.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Benchmark.Models\Benchmark.Models.csproj">
+      <Project>{348019BB-62C6-44E4-81CE-B7CFF9D00445}</Project>
+      <Name>Benchmark.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Benchmark.Tools\Benchmark.Tools.csproj">
+      <Project>{59C40BF7-103C-4334-BCA4-657095C0E7B9}</Project>
+      <Name>Benchmark.Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Device.Components.Abstractions\Device.Components.Abstractions.csproj">
+      <Project>{D0EBAF72-2372-403D-91B0-B8473E54ABB1}</Project>
+      <Name>Device.Components.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Device.Components.Core\Device.Components.Core.csproj">
+      <Project>{0c0cb2c6-85a1-4a67-8ad4-13373c6bb898}</Project>
+      <Name>Device.Components.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Orion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HDD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="twitter.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

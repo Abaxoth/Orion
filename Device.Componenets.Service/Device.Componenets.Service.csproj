@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Device.Components.Abstractions\Device.Components.Abstractions.csproj" />
+    <ProjectReference Include="..\Device.Components.Core\Device.Components.Core.csproj" />
+    <ProjectReference Include="..\Device.Components.Models\Device.Components.Models.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Benchmark.Abstractions\Benchmark.Abstractions.csproj" />
+    <ProjectReference Include="..\Benchmark.Models\Benchmark.Models.csproj" />
+  </ItemGroup>
+
+</Project>

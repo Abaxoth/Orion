@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Orion.Client.Models\UI.Client.Models.csproj" />
+    <ProjectReference Include="..\Orion.Clients.Abstractions\UI.Clients.Abstractions.csproj" />
+    <ProjectReference Include="..\UI.Client.Core\UI.Client.Core.csproj" />
+  </ItemGroup>
+
+</Project>
